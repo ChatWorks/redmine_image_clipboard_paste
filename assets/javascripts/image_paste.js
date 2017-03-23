@@ -172,6 +172,7 @@ jQuery.event.props.push('dataTransfer');
         // --------------------------------------------------------------------------
 
         uploadImage: function(type, blob, editElement, filename) {
+            if (blob === null ) {return;}
             var ext = (typeof filename === 'undefined') ? getExtension(type) : ('_' + filename);
             var fileinput = $('.file_selector').get(0);
             var timestamp = Math.round(+new Date()/1000);
